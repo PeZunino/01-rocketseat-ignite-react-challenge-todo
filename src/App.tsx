@@ -3,41 +3,63 @@ import { defaultTheme } from "./styles/theme/default";
 import { GlobalStyle } from "./styles/global";
 import { Header } from "./components/Header";
 import { PlusCircle } from "phosphor-react";
-import clipboard from "./assets/clipboard.svg";
+import { Input } from "./components/Input";
+import { Button } from "./components/Button";
+import { ListHeader } from "./components/ListHeader";
+import { useState } from "react";
+import { EmptyElement } from "./components/EmptyElement";
+import { ListItem } from "./components/ListItem";
+
+interface ITask {
+  id: number;
+  description: string;
+}
 
 export function App() {
+  const [taskList, setTaskList] = useState<ITask[]>([
+    { description: "Minha tarefa", id: new Date().getTime() },
+  ]);
+  const [inputValue, setInputValue] = useState("");
+
+  function handleNewTask() {
+    const newTask: ITask = {
+      id: new Date().getTime(),
+      description: inputValue,
+    };
+
+    setTaskList([...taskList, newTask]);
+    setInputValue("");
+  }
+
+  const isNewTaskDescriptionEmpty = inputValue.length == 0;
   return (
     <ThemeProvider theme={defaultTheme}>
       <Header />
 
       <main>
         <div>
-          <input placeholder="Adicionar uma nova tarefa"></input>
-          <button>
+          <Input
+            placeholder="Adicionar uma nova tarefa"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            required
+          />
+          <Button onClick={handleNewTask} disabled={isNewTaskDescriptionEmpty}>
             Criar
             <PlusCircle size={16} />
-          </button>
+          </Button>
         </div>
 
         <section>
-          <header>
-            <span>
-              Tarefas criadas <span>0</span>
-            </span>
+          <ListHeader />
 
-            <span>
-              Concluídas <span>0</span>
-            </span>
-          </header>
-
-          <div>
-            <img src={clipboard} alt="clipboard" />
-            <span>
-              <strong>Você ainda não tem tarefas cadastradas</strong>
-              <br />
-              Crie tarefas e organize seus itens a fazer
-            </span>
-          </div>
+          {taskList.length > 0 ? (
+            taskList.map((task) => (
+              <ListItem key={task.id} description={task.description} />
+            ))
+          ) : (
+            <EmptyElement />
+          )}
         </section>
       </main>
       <GlobalStyle />
