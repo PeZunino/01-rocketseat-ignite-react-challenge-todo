@@ -24,8 +24,4 @@ export const ListItemContainer = styled.div`
   svg {
     cursor: pointer;
   }
-
-  trash:hover {
-    fill: ${(props) => props.theme.red};
-  }
 `;
