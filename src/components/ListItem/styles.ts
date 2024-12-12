@@ -16,7 +16,8 @@ export const ListItemContainer = styled.div`
   background-color: ${(props) => props.theme["gray-500"]};
   color: ${(props) => props.theme["gray-100"]};
 
-  p {
+  p,
+  s {
     margin-left: 1rem;
     flex: 1;
   }

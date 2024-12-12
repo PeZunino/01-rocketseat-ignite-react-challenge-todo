@@ -13,11 +13,12 @@ import { ListItem } from "./components/ListItem";
 export interface ITask {
   id: number;
   description: string;
+  isDone: boolean;
 }
 
 export function App() {
   const [taskList, setTaskList] = useState<ITask[]>([
-    { description: "Minha tarefa", id: new Date().getTime() },
+    { description: "Minha tarefa", id: new Date().getTime(), isDone: false },
   ]);
   const [inputValue, setInputValue] = useState("");
 
@@ -25,6 +26,7 @@ export function App() {
     const newTask: ITask = {
       id: new Date().getTime(),
       description: inputValue,
+      isDone: false,
     };
 
     setTaskList([...taskList, newTask]);
@@ -36,6 +38,17 @@ export function App() {
 
     setTaskList(newTaskList);
   }
+
+  function onTaskChecked(taskToDeleteId: number) {
+    const task = taskList.find((task) => task.id == taskToDeleteId);
+
+    if (task != undefined) {
+      console.log(`task encontrada - ${task.isDone} `);
+      task.isDone = !task?.isDone;
+      setTaskList([...taskList]);
+    }
+  }
+
   const isNewTaskDescriptionEmpty = inputValue.length == 0;
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -60,7 +73,12 @@ export function App() {
 
           {taskList.length > 0 ? (
             taskList.map((task) => (
-              <ListItem key={task.id} task={task} onDeleteTask={onDeleteTask} />
+              <ListItem
+                key={task.id}
+                task={task}
+                onDeleteTask={onDeleteTask}
+                onTaskChecked={onTaskChecked}
+              />
             ))
           ) : (
             <EmptyElement />
