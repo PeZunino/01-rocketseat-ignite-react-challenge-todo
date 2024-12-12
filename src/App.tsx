@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/theme/default";
 import { GlobalStyle } from "./styles/global";
 import { Header } from "./components/Header";
-import { PlusCircle } from "phosphor-react";
+import { PlusCircle } from "@phosphor-icons/react";
 import { Input } from "./components/Input";
 import { Button } from "./components/Button";
 import { ListHeader } from "./components/ListHeader";

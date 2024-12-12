@@ -1,7 +1,6 @@
-import { Circle, Trash, CheckCircle } from "phosphor-react";
 import { ListItemContainer } from "./styles";
 import { ITask } from "../../App";
-import { useState } from "react";
+import { Trash, CheckCircle, Circle } from "@phosphor-icons/react";
 
 interface IListItem {
   task: ITask;
@@ -10,8 +9,6 @@ interface IListItem {
 }
 
 export function ListItem({ task, onDeleteTask, onTaskChecked }: IListItem) {
-  const [isHovered, setIsHovered] = useState(false);
-
   function handleDeleteTask() {
     onDeleteTask(task.id);
   }
@@ -40,13 +37,9 @@ export function ListItem({ task, onDeleteTask, onTaskChecked }: IListItem) {
         </>
       )}
 
-      <Trash
-        size={24}
-        color={isHovered ? "#E25858" : "#808080"}
-        onClick={handleDeleteTask}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      />
+      <button onClick={handleDeleteTask}>
+        <Trash size={16} color="#808080" />
+      </button>
     </ListItemContainer>
   );
 }
