@@ -10,7 +10,7 @@ import { useState } from "react";
 import { EmptyElement } from "./components/EmptyElement";
 import { ListItem } from "./components/ListItem";
 
-interface ITask {
+export interface ITask {
   id: number;
   description: string;
 }
@@ -31,6 +31,11 @@ export function App() {
     setInputValue("");
   }
 
+  function onDeleteTask(taskToDeleteId: number) {
+    const newTaskList = taskList.filter((task) => task.id != taskToDeleteId);
+
+    setTaskList(newTaskList);
+  }
   const isNewTaskDescriptionEmpty = inputValue.length == 0;
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -55,7 +60,7 @@ export function App() {
 
           {taskList.length > 0 ? (
             taskList.map((task) => (
-              <ListItem key={task.id} description={task.description} />
+              <ListItem key={task.id} task={task} onDeleteTask={onDeleteTask} />
             ))
           ) : (
             <EmptyElement />

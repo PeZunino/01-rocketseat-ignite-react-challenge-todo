@@ -20,4 +20,12 @@ export const ListItemContainer = styled.div`
     margin-left: 1rem;
     flex: 1;
   }
+
+  svg {
+    cursor: pointer;
+  }
+
+  trash:hover {
+    fill: ${(props) => props.theme.red};
+  }
 `;
