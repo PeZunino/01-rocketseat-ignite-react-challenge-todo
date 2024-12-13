@@ -40,13 +40,10 @@ export function App() {
   }
 
   function onTaskChecked(taskToDeleteId: number) {
-    const task = taskList.find((task) => task.id == taskToDeleteId);
-
-    if (task != undefined) {
-      console.log(`task encontrada - ${task.isDone} `);
-      task.isDone = !task?.isDone;
-      setTaskList([...taskList]);
-    }
+    const updatedTaskList = taskList.map((task) =>
+      task.id == taskToDeleteId ? { ...task, isDone: !task.isDone } : task
+    );
+    setTaskList(updatedTaskList);
   }
 
   const isNewTaskDescriptionEmpty = inputValue.length == 0;

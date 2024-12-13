@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ListItemContainer = styled.div`
+export const ListItemContainer = styled.div<{ isDone: boolean }>`
   display: flex;
   align-items: center;
 
@@ -15,11 +15,45 @@ export const ListItemContainer = styled.div`
   border: 1px solid ${(props) => props.theme["gray-400"]};
   background-color: ${(props) => props.theme["gray-500"]};
   color: ${(props) => props.theme["gray-100"]};
-
-  p,
-  s {
+  p {
     margin-left: 1rem;
     flex: 1;
+    transition: opacity 0.2s;
+    user-select: none;
+    ${(props) =>
+      props.isDone &&
+      `
+      opacity: 0.5; 
+      text-decoration: line-through;
+      
+    `}
+  }
+
+  input {
+    display: none;
+  }
+  label > div {
+    border-radius: 100%;
+    height: 1.093rem;
+    width: 1.093rem;
+    cursor: pointer;
+    border: 2px solid ${(props) => props.theme["blue-100"]};
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s background-color;
+
+    ${(props) =>
+      props.isDone &&
+      `
+      background-color: ${props.theme["purple-100"]};
+      border: none;
+    `}
+
+    &:hover {
+      background-color: rgba(30, 111, 159, 0.2);
+    }
   }
 
   button {
@@ -30,7 +64,9 @@ export const ListItemContainer = styled.div`
     background-color: transparent;
     transition: 0.2s background-color;
   }
-
+  button path {
+    transition: 0.2s fill;
+  }
   button:hover {
     background-color: ${(props) => props.theme["gray-400"]};
   }
