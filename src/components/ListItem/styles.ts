@@ -52,7 +52,10 @@ export const ListItemContainer = styled.div<{ isDone: boolean }>`
     `}
 
     &:hover {
-      background-color: rgba(30, 111, 159, 0.2);
+      background-color: ${(props) =>
+        props.isDone
+          ? `${props.theme["purple-200"]};`
+          : `rgba(30, 111, 159, 0.2)`};
     }
   }
 
