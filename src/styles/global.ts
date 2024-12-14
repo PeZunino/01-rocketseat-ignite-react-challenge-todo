@@ -23,7 +23,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   main{
-    padding: 0rem 22rem ;
+    max-width: 46rem;
+    margin: 0 auto;
   }
   
   main > div{

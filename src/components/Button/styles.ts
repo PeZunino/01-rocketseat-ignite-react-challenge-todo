@@ -17,4 +17,8 @@ export const StyledButton = styled.button`
     opacity: 0.8;
     cursor: not-allowed;
   }
+
+  &:not(:disabled):hover {
+    background-color: ${(props) => props.theme["blue-100"]};
+  }
 `;

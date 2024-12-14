@@ -66,7 +66,7 @@ export function App() {
         </div>
 
         <section>
-          <ListHeader />
+          <ListHeader taskList={taskList} />
 
           {taskList.length > 0 ? (
             taskList.map((task) => (
