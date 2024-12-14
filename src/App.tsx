@@ -17,9 +17,7 @@ export interface ITask {
 }
 
 export function App() {
-  const [taskList, setTaskList] = useState<ITask[]>([
-    { description: "Minha tarefa", id: new Date().getTime(), isDone: false },
-  ]);
+  const [taskList, setTaskList] = useState<ITask[]>([]);
   const [inputValue, setInputValue] = useState("");
 
   function handleNewTask() {
