@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# ToDoList 	
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)  ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) 	![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![ToDoList](https://github.com/user-attachments/assets/2f4f6fc5-1e0a-4c5c-8188-28a267c89a40)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📜 Description
 
-Currently, two official plugins are available:
+This project is a simple to-do list application developed with React and styled-components. The app allows you to add, mark as completed, and delete tasks. It has a clean and modern interface, utilizing Phosphor Icons for icons.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 💻 Technologies Used
 
-## Expanding the ESLint configuration
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A superset of JavaScript that adds static types.
+- **Styled-Components**: For styling components with CSS-in-JS.
+- **Vite**: A fast build tool for modern web projects.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## ⚙️ Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Add New Tasks**: Enter a task description and click the "Create" button to add a new task.
+- **Mark Tasks as Completed**: Click the checkbox next to a task to toggle its status between "pending" and "completed."
+- **Delete Tasks**: Click the trash can icon to remove a task from the list.
+- **Task Count**: Displays the total number of tasks created and completed.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Installation
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Prerequisites
+- **Node.js (version 16 or above)**
+- **npm (Node.js package manager)**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/PeZunino/ToDoList.git
+2. Navigate into the project directory:
+   ```bash
+   cd ToDoList
+3. Install dependencies:
+   ```bash
+   npm install
+4. Run the development server:
+   ```bash
+   npm run dev
+5. Open your browser and visit:
+   ```bash
+   http://localhost:5173/
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🤝 Contributing
+If you'd like to contribute to this project, follow these steps:
+
+1. Fork this repository.
+2. Create a branch for your changes.
+3. Make your changes and submit a pull request.
+
+## 📄 License
+This project is open source and available under the MIT License.
