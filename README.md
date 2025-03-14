@@ -1,4 +1,4 @@
-# Ignite-todo
+# todo
 
 ![Completed](https://img.shields.io/badge/status-completed-brightgreen)
 
@@ -32,12 +32,12 @@ Built with React, the app focuses on basic React concepts like componentization,
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/PeZunino/Ignite-React-Module1-ToDo.git
+   git clone https://github.com/PeZunino/01-rocketseat-ignite-react-challenge-todo.git
    ```
 2. Navigate into the project directory:
 
    ```bash
-   cd Ignite-React-Module1-ToDo
+   cd Ignite-React-Module1-todo
    ```
 3. Install dependencies:
 
