@@ -13,7 +13,7 @@
 
 ## 📜 Description
 
-A to-do list application that helps you stay organized by managing tasks efficiently
+A to-do list application that helps you stay organized by managing tasks efficiently.
 
 Built with React, the app focuses on basic React concepts like componentization, properties, state management, and immutability.
 
