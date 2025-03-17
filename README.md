@@ -33,12 +33,12 @@ Built with React, the app focuses on basic React concepts like componentization,
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/PeZunino/rocketseat-ignite-react-01-challenge-todo.git
+   git clone https://github.com/PeZunino/01-rocketseat-ignite-react-challenge-todo.git
    ```
 2. Navigate into the project directory:
 
    ```bash
-   cd rocketseat-ignite-react-01-challenge-todo
+   cd 01-rocketseat-ignite-react-challenge-todo
    ```
 3. Install dependencies:
 
